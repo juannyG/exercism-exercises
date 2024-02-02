@@ -1,0 +1,36 @@
+# dune runtest
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Shared cache location: /Users/juannyg/.cache/dune/db
+# Workspace root:
+# /Users/juannyg/Dropbox/code-scratch/exercism.io/ocaml/difference-of-squares
+# Auto-detected concurrency: 8
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; installed_env =
+#      map
+#        { "INSIDE_DUNE" :
+#            "/Users/juannyg/Dropbox/code-scratch/exercism.io/ocaml/difference-of-squares/_build/default"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        }
+#  ; instrument_with = []
+#  }
+$ /Users/juannyg/.opam/default/bin/ocamlc.opt -config > /var/folders/nr/w2lxq8l524xckzvwtcr1dj400000gn/T/dune_2a1b60_output
+$ (cd _build/default && /Users/juannyg/.opam/default/bin/ocamldep.opt -modules -impl test.ml) > _build/default/.test.eobjs/test.impl.d
+$ (cd _build/default && /Users/juannyg/.opam/default/bin/ocamldep.opt -modules -intf difference_of_squares.mli) > _build/default/.test.eobjs/difference_of_squares.intf.d
+$ (cd _build/default && /Users/juannyg/.opam/default/bin/ocamldep.opt -modules -impl difference_of_squares.ml) > _build/default/.test.eobjs/difference_of_squares.impl.d
+$ (cd _build/default && /Users/juannyg/.opam/default/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I .test.eobjs/byte -I /Users/juannyg/.opam/default/lib/base -I /Users/juannyg/.opam/default/lib/base/base_internalhash_types -I /Users/juannyg/.opam/default/lib/base/caml -I /Users/juannyg/.opam/default/lib/base/shadow_stdlib -I /Users/juannyg/.opam/default/lib/ocaml/unix -I /Users/juannyg/.opam/default/lib/ounit2 -I /Users/juannyg/.opam/default/lib/ounit2/advanced -I /Users/juannyg/.opam/default/lib/seq -I /Users/juannyg/.opam/default/lib/sexplib0 -I /Users/juannyg/.opam/default/lib/stdlib-shims -no-alias-deps -opaque -o .test.eobjs/byte/difference_of_squares.cmi -c -intf difference_of_squares.mli)
+$ (cd _build/default && /Users/juannyg/.opam/default/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I .test.eobjs/byte -I /Users/juannyg/.opam/default/lib/base -I /Users/juannyg/.opam/default/lib/base/base_internalhash_types -I /Users/juannyg/.opam/default/lib/base/caml -I /Users/juannyg/.opam/default/lib/base/shadow_stdlib -I /Users/juannyg/.opam/default/lib/ocaml/unix -I /Users/juannyg/.opam/default/lib/ounit2 -I /Users/juannyg/.opam/default/lib/ounit2/advanced -I /Users/juannyg/.opam/default/lib/seq -I /Users/juannyg/.opam/default/lib/sexplib0 -I /Users/juannyg/.opam/default/lib/stdlib-shims -no-alias-deps -opaque -o .test.eobjs/byte/test.cmo -c -impl test.ml)
+$ (cd _build/default && /Users/juannyg/.opam/default/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -I .test.eobjs/byte -I .test.eobjs/native -I /Users/juannyg/.opam/default/lib/base -I /Users/juannyg/.opam/default/lib/base/base_internalhash_types -I /Users/juannyg/.opam/default/lib/base/caml -I /Users/juannyg/.opam/default/lib/base/shadow_stdlib -I /Users/juannyg/.opam/default/lib/ocaml/unix -I /Users/juannyg/.opam/default/lib/ounit2 -I /Users/juannyg/.opam/default/lib/ounit2/advanced -I /Users/juannyg/.opam/default/lib/seq -I /Users/juannyg/.opam/default/lib/sexplib0 -I /Users/juannyg/.opam/default/lib/stdlib-shims -intf-suffix .ml -no-alias-deps -opaque -o .test.eobjs/native/difference_of_squares.cmx -c -impl difference_of_squares.ml)
+$ (cd _build/default && /Users/juannyg/.opam/default/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -I .test.eobjs/byte -I .test.eobjs/native -I /Users/juannyg/.opam/default/lib/base -I /Users/juannyg/.opam/default/lib/base/base_internalhash_types -I /Users/juannyg/.opam/default/lib/base/caml -I /Users/juannyg/.opam/default/lib/base/shadow_stdlib -I /Users/juannyg/.opam/default/lib/ocaml/unix -I /Users/juannyg/.opam/default/lib/ounit2 -I /Users/juannyg/.opam/default/lib/ounit2/advanced -I /Users/juannyg/.opam/default/lib/seq -I /Users/juannyg/.opam/default/lib/sexplib0 -I /Users/juannyg/.opam/default/lib/stdlib-shims -intf-suffix .ml -no-alias-deps -opaque -o .test.eobjs/native/test.cmx -c -impl test.ml)
+$ (cd _build/default && /Users/juannyg/.opam/default/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -o test.exe /Users/juannyg/.opam/default/lib/base/base_internalhash_types/base_internalhash_types.cmxa -I /Users/juannyg/.opam/default/lib/base/base_internalhash_types /Users/juannyg/.opam/default/lib/base/caml/caml.cmxa /Users/juannyg/.opam/default/lib/sexplib0/sexplib0.cmxa /Users/juannyg/.opam/default/lib/base/shadow_stdlib/shadow_stdlib.cmxa /Users/juannyg/.opam/default/lib/base/base.cmxa -I /Users/juannyg/.opam/default/lib/base /Users/juannyg/.opam/default/lib/ocaml/unix/unix.cmxa /Users/juannyg/.opam/default/lib/stdlib-shims/stdlib_shims.cmxa /Users/juannyg/.opam/default/lib/ounit2/advanced/oUnitAdvanced.cmxa /Users/juannyg/.opam/default/lib/ounit2/oUnit.cmxa .test.eobjs/native/difference_of_squares.cmx .test.eobjs/native/test.cmx)
+$ (cd _build/default && ./test.exe)
+> .........
+> Ran: 9 tests in: 0.11 seconds.
+> OK
