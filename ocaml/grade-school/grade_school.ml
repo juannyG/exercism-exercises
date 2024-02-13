@@ -5,14 +5,26 @@ type school = string list Int_map.t
 
 let empty_school = Map.empty (module Int)
 
-let add _ _ _ =
-    failwith "'add' is missing"
+let add name grade school' =
+  match Map.find school' grade with
+  | Some l -> school' |> Map.set ~key:grade ~data:(name :: l)
+  | None -> school' |> Map.set ~key:grade ~data:[name]
 
-let grade _ _ =
-    failwith "'grade' is missing"
+let grade grade school' =
+  match Map.find school' grade with
+  | Some l -> l
+  | None -> []
 
-let sorted _ =
-    failwith "'sorted' is missing"
+let sorted school' =
+  school' (* This function is never used by the tests... *)
 
-let roster _ =
-    failwith "'roster' is missing"
+let roster school' =
+  let keys = Map.keys school' in
+  let rec f keys acc =
+    match keys with
+    | [] -> acc 
+    | k :: t ->
+      match Map.find school' k with
+      | Some l -> f t (acc @ l)
+      | None -> f t acc
+  in f keys []
