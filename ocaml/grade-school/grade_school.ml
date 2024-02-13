@@ -19,12 +19,12 @@ let sorted school' =
   school' (* This function is never used by the tests... *)
 
 let roster school' =
-  let keys = Map.keys school' in
+  let keys = List.sort (Map.keys school') ~compare:Int.compare in
   let rec f keys acc =
     match keys with
-    | [] -> acc 
+    | [] -> acc
     | k :: t ->
       match Map.find school' k with
-      | Some l -> f t (acc @ l)
+      | Some l -> f t (acc @ (List.sort l ~compare:String.compare))
       | None -> f t acc
   in f keys []
