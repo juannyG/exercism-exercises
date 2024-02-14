@@ -1,8 +1,26 @@
-let is_equilateral _ _ _ =
-    failwith "'is_equilateral' is missing"
+let is_triangle a b c =
+  a > 0 && b > 0 && c > 0 &&
+  a + b >= c &&
+  b + c >= a &&
+  a + c >= b
 
-let is_isosceles _ _ _ =
-    failwith "'is_isosceles' is missing"
+let is_equilateral a b c =
+  is_triangle a b c &&
+  a = b &&
+  a = c &&
+  b = c
 
-let is_scalene _ _ _ =
-    failwith "'is_scalene' is missing"
+let is_isosceles a b c =
+  is_triangle a b c &&
+  (
+    (a = b) ||
+    (a = c) ||
+    (b = a) ||
+    (b = c)
+  )
+
+let is_scalene a b c =
+  is_triangle a b c &&
+  a != b &&
+  a != c &&
+  b != c
