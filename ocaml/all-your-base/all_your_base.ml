@@ -17,22 +17,20 @@ let num_to_list n base =
   in f n []
 
 let convert_to_dec ~from ~digits =
-  if from = 10 then digits
-  else
     let fl_from = float_of_int from in
     let rec f n l acc =
       match l with
       | [] -> acc
       | h :: t ->
-        let x = int_of_float ((float_of_int h) ** (fl_from)) in
+        let x = int_of_float ((float_of_int h) *. (fl_from ** float_of_int n)) in
         f (n - 1) t (x + acc)
     in
-    let res = f (List.length digits - 1) digits 0 in
-    num_to_list res 10
+    f (List.length digits - 1) digits 0
 
 let convert_bases ~from ~digits ~target =
-  if target < 0 || from < 0 then None
+  if target < 2 || from < 2 then None
   else if not (are_digits_valid ~from:from ~digits:digits) then None
   else
     let as_dec = convert_to_dec ~from:from ~digits:digits in
-    Some as_dec
+    if as_dec = 0 then Some [0]
+    else Some (num_to_list as_dec target)
